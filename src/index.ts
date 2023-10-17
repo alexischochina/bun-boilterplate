@@ -1,6 +1,7 @@
 import { Elysia } from 'elysia';
 import { connect } from 'mongoose';
 import { pkmController } from './controllers/pkmController';
+import { userController } from './controllers/userController';
 
 const app = new Elysia();
 const port = app.server?.port;
@@ -14,6 +15,7 @@ connect('mongodb+srv://alexchoc521:AYNx600ERto5kcLw@cluster0.9olz6al.mongodb.net
     });
 
 pkmController(app);
+userController(app);
 
 app
     .get('/', () => 'Hello Bun.js!')
